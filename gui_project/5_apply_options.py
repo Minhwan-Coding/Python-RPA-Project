@@ -6,7 +6,7 @@ from tkinter import filedialog
 from PIL import Image
 
 root = Tk()
-root.title("Nado GUI")
+root.title("Nani zzzzz")
 
 # 파일 추가
 def add_file():
