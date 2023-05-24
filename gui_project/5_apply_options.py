@@ -6,13 +6,13 @@ from tkinter import filedialog
 from PIL import Image
 
 root = Tk()
-root.title("Nado GUI")
+root.title("Nani")
 
 # 파일 추가
 def add_file():
     files = filedialog.askopenfilenames(title="이미지 파일을 선택하세요", \
         filetypes=(("PNG 파일", "*.png"), ("모든 파일", "*.*")), \
-        initialdir=r"C:\Users\Nadocoding\Desktop\PythonWorkspace")
+        initialdir=r"C:\Users\nani\Desktop\Python_Project")
         # 최초에 사용자가 지정한 경로를 보여줌
     
     # 사용자가 선택한 파일 목록
@@ -76,21 +76,6 @@ def merge_image():
             # 원본 사이즈 사용
             image_sizes = [(x.size[0], x.size[1]) for x in images]
 
-        # 계산식
-        # 100 * 60 이미지가 있음. -> width 를 80 으로 줄이면 height 는?
-        # (원본 width) : (원본 height) = (변경 width) : (변경 height)
-        #     100      :     60       =      80      :     ?
-        #      x       :     y        =      x'      :     y'
-        #    xy' = x'y
-        #    y' = x'y / x -> 이 식을 적용
-        #  100:60=80:48
-
-        # 우리 코드에 대입하려면?
-        # x = width = size[0]
-        # y = height = size[1]
-        # x' = img_width # 이 값으로 변경 해야 함
-        # y' = x'y / x = img_width * size[1] / size[0]
-
         widths, heights = zip(*(image_sizes))
 
         # 최대 넓이, 전체 높이 구해옴
@@ -116,7 +101,7 @@ def merge_image():
             progress_bar.update()
 
         # 포맷 옵션 처리
-        file_name = "nado_photo." + img_format
+        file_name = "nani_photo." + img_format
         dest_path = os.path.join(txt_dest_path.get(), file_name)
         result_img.save(dest_path)
         msgbox.showinfo("알림", "작업이 완료되었습니다.")
